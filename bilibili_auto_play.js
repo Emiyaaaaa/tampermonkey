@@ -15,17 +15,8 @@
                     var video_play_button = document.getElementsByClassName('bilibili-player-video-state')[0];
                     var video_volume_button = document.getElementsByClassName('bilibili-player-video-btn-volume')[0];
                     $(video_play_button).click();
-                    if (video_volume_button.classList.contains('video-state-volume-max')) {
-                        video_volume_button.classList.remove('video-state-volume-max');
-                        video_volume_button.classList.add('video-state-volume-min');
-                    }
-                    setTimeout(function(){
-                        if (video_volume_button.classList.contains('video-state-volume-min')) {
-                            video_volume_button.classList.remove('video-state-volume-min');
-                            video_volume_button.classList.add('video-state-volume-max');
-                        }
-                    },4500);
-
+                    $(video_volume_button).click()
+                    console.log(video_volume_button)
                 }
             },50);
         }
