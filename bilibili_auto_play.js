@@ -23,6 +23,15 @@
         waitLoading();
     }
 
+    $.ajax({
+        url:"http://www.emiya.com.cn",
+        type:"GET",
+        data:{},
+        success:function(data){
+            console.log(data)
+        }
+    })
+
     function time2sec(time){
         min = time.split(':')[0];
         sec = time.split(':')[1];
