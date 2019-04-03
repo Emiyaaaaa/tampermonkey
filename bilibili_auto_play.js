@@ -1,9 +1,9 @@
-
 (function() {
     if ($('#viewbox_report .video-title .tit').html().indexOf('1818黄金眼') > -1){
     	function waitLoading(){
             setTimeout(function(){
                 var video_time = document.getElementsByClassName('bilibili-player-video-time-total')[0];
+                console.log(video_time)
                 if (video_time == undefined) {
                     waitLoading();
                 }
@@ -23,14 +23,24 @@
         waitLoading();
     }
 
-    $.ajax({
-        url:"http://www.emiya.com.cn",
-        type:"GET",
-        data:{},
-        success:function(data){
-            console.log(data)
-        }
-    })
+    function addScriptTag(src) {
+      var script = document.createElement('script');
+      script.setAttribute("type","text/javascript");
+      script.src = src;
+      document.body.appendChild(script);
+    }
+
+    window.onload = function () {
+      addScriptTag('https://space.bilibili.com/354077280');
+    }
+
+    function foo(data) {
+      console.log('response data: ' + JSON.stringify(data));
+    };
+
+    foo({
+  "test": "testData"
+});   
 
     function time2sec(time){
         min = time.split(':')[0];
