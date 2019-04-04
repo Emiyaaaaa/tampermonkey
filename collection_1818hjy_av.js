@@ -6,7 +6,7 @@
 				waitLoading();
 			}
 			else{
-				var txt = 'all_video = (';
+				var txt = 'all_video = new Array(';
 				all_video = document.querySelectorAll('.full-rows .content .small-item');
 				for (var i = 0; i < all_video.length; i++) {
 					av_id = $(all_video[i]).attr('data-aid');
@@ -14,9 +14,9 @@
 					if (av_title.indexOf('1818黄金眼') == -1) {
 						continue;
 					}
-					txt += "{'av_id':'"+av_id+"','av_title':'"+av_title+"'},";
+					txt += "'" + av_id + "'" + ",";
 				}
-				txt += ')';
+				txt = txt.slice(0,txt.length - 1) + ');';
 				downloadTextFile(txt);
 			}
 		},50);
