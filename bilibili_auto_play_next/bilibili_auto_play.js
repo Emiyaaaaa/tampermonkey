@@ -15,7 +15,9 @@
                 }
                 else{
                     var video_play_button = document.getElementsByClassName('bilibili-player-video-state')[0];
+                    var video_fullscreen = document.getElementsByClassName('bilibili-player-video-btn-fullscreen')[0];
                     $(video_play_button).click();
+                    $(video_fullscreen).click();
                     var play_time = document.getElementsByClassName('bilibili-player-video-time-now')[0];
                     play_time_now = time2sec(play_time.innerText);
                     get_time_now();
