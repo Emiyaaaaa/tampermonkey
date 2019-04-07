@@ -27,6 +27,10 @@
         }
         waitLoading();
     }
+    else{
+        var video_play_button = document.getElementsByClassName('bilibili-player-video-state')[0];
+        $(video_play_button).click();
+    }
 
     function time2sec(time){
         min = time.split(':')[0];
