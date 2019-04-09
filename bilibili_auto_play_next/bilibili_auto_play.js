@@ -1,6 +1,6 @@
 (function() {
     now_av = window.location.href.split('/')[4];
-    now_av_id = now_av.slice(2,)
+    now_av_id = now_av.slice(2,);
     if ($('#viewbox_report .video-title .tit').html().indexOf('1818黄金眼') > -1){
         not_1818 = false;
     	function waitLoading(){
