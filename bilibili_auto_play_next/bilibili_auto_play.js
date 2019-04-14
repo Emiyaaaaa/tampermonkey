@@ -29,7 +29,7 @@
         not_1818 = true;
         function waitLoading(){
             setTimeout(function(){
-                video_time = document.getElementsByClassName('bilibili-player-video-time-total')[0];
+                var video_time = document.getElementsByClassName('bilibili-player-video-time-total')[0];
                 if (video_time == undefined) {
                     waitLoading();
                 }
@@ -71,6 +71,7 @@
     function get_time_now(){
         setTimeout(function(){
             var play_time = document.getElementsByClassName('bilibili-player-video-time-now')[0];
+            var video_time = document.getElementsByClassName('bilibili-player-video-time-total')[0];
             play_time_now = time2sec(play_time.innerText);
             surplus_time = time2sec(video_time.innerText) - play_time_now - 2;
             if (not_1818) {
