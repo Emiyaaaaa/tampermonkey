@@ -13,6 +13,12 @@
                     waitLoading();
                 }
                 else{
+                    var video_title = $('#viewbox_report .video-title .tit').html();
+                    video_title = video_title.slice(8,video_title.length-1);
+                    video_title = video_title.replace(' ','，')
+                    var web_fullscreen_video = document.getElementsByClassName('bilibili-player-video');
+                    var append_html = "<div style='margin:0 auto;line-height:25px;position:fixed;width:21px;font-size:21px;white-space:normal;color:white;top:35px;'>"+video_title+"</div>";
+                    $(web_fullscreen_video).append(append_html);
                     var video_play_button = document.getElementsByClassName('bilibili-player-video-state')[0];
                     var video_fullscreen = document.getElementsByClassName('bilibili-player-video-btn-fullscreen')[0];
                     var video_web_fullscreen = document.getElementsByClassName('bilibili-player-video-web-fullscreen')[0];
