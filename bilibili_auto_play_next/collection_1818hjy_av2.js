@@ -1,4 +1,5 @@
 (function () {
+	page = 1;
 	function waitLoading(){
 		setTimeout(function(){
 			var all_video = document.querySelector('.section .clearfix .small-item');
@@ -6,7 +7,7 @@
 				waitLoading();
 			}
 			else{
-				var txt = 'home_video = new Array(';
+				var txt = 'all_video = new Array(';
 				all_video = document.querySelectorAll('.section .clearfix .small-item');
 				for (var i = 0; i < all_video.length; i++) {
 					av_id = $(all_video[i]).attr('data-aid');
@@ -17,7 +18,10 @@
 					txt += "'" + av_id + "'" + ",";
 				}
 				txt = txt.slice(0,txt.length - 1) + ');';
-				downloadTextFile(txt);
+				a = document.getElementsByClassName('be-pager-item')
+				console.log(a)
+				// $(a[4]).click()
+				// downloadTextFile(txt);
 			}
 		},50);
 	}
