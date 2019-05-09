@@ -1,11 +1,12 @@
 (function () {
 	page = 2;
+	console.log('a')
 	txt = 'all_video = new Array(';
 
-	for (var i = 0; i < page; i++) {
-		waitLoading();
-	}
-
+	// for (var i = 0; i < page; i++) {
+	// 	waitLoading();
+	// }
+	waitLoading()
 	function waitLoading(){
 		setTimeout(function(){
 			var all_video = document.querySelector('.section .clearfix .small-item');
@@ -26,7 +27,9 @@
 					// console.log(txt)
 				}
 				document.getElementsByClassName('be-pager-next')[0].click();
-				var now_page = window.location.search[window.location.search.indexOf('page=')+'page='.length];
+				now_page = window.location.search[window.location.search.indexOf('page=')+'page='.length];
+				console.log(now_page)
+
 				if (now_page <= page) {
 					waitLoading();
 				}
