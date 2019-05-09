@@ -2,6 +2,10 @@
 	page = 2;
 	txt = 'all_video = new Array(';
 
+	for (var i = 0; i < page; i++) {
+		waitLoading();
+	}
+
 	function waitLoading(){
 		setTimeout(function(){
 			var all_video = document.querySelector('.section .clearfix .small-item');
@@ -22,6 +26,10 @@
 					// console.log(txt)
 				}
 				document.getElementsByClassName('be-pager-next')[0].click();
+				var now_page = window.location.search[window.location.search.indexOf('page=')+'page='.length];
+				if (now_page <= page) {
+					waitLoading();
+				}
 			}
 		},50);
 	}
@@ -30,23 +38,4 @@
 	    var file = new File([mobileCode], "avid.js", {type: "text/plain;charset=utf-8"});
 	    saveAs(file);
 	}
-
-	function waitLoading2(){
-		setTimeout(function(){
-			var next_page = document.getElementsByClassName('be-pager-next')[0];
-			if (next_page == null) {
-				waitLoading2();
-			}
-			else{
-				for (var i = 0; i < page; i++) {
-					waitLoading();
-					if((i + 1) != page){
-						console.log($(next_page).click());
-						$(next_page).click();
-					}
-				}
-			}
-		},50);
-	}
-	waitLoading2();
 })();
