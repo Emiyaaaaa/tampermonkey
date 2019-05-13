@@ -6,7 +6,7 @@
 				waitLoading();
 			}
 			else{
-				var txt = 'home_video = new Array(';
+				var txt = 'all_video = new Array(';
 				all_video = document.querySelectorAll('.section .clearfix .small-item');
 				for (var i = 0; i < all_video.length; i++) {
 					av_id = $(all_video[i]).attr('data-aid');

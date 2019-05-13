@@ -47,8 +47,8 @@
 					}
 					else{
 						txt = txt.slice(0,txt.length - 1) + ');';
-						console.log(txt);
 						downloadTextFile(txt);
+						document.getElementsByClassName('be-pager-item')[0].click();
 					}
 				},800);
 			}

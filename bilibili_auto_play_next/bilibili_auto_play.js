@@ -100,6 +100,7 @@
         var now_av_index = all_video.indexOf(now_av_id);
         if (now_av_index != 0){
             window.location.href = 'https://www.bilibili.com/video/av' + all_video[now_av_index-1];
+            alert('https://www.bilibili.com/video/av' + all_video[now_av_index-1])
         }
     }
     function open_new_p_video(){
