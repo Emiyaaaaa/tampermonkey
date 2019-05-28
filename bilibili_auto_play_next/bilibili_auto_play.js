@@ -59,7 +59,12 @@
                     }
                     var play_time = document.getElementsByClassName('bilibili-player-video-time-now')[0];
                     play_time_now = time2sec(play_time.innerText);
-                    get_time_now();
+                    try{
+                        get_time_now();
+                    }
+                    catch(err){
+                        get_time_now();
+                    }
                 }
             },50);
         }
@@ -91,9 +96,13 @@
                 }
             }
             else{
-                get_time_now();
+                try{
+                    get_time_now();
+                }
+                catch(err){
+                    alert('cuowu')
+                }
             }
-            
         },200);
     }
     function open_new_video(){
