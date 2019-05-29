@@ -63,6 +63,7 @@
                         get_time_now();
                     }
                     catch(err){
+                        alert(1)
                         get_time_now();
                     }
                 }
@@ -81,6 +82,9 @@
     function get_time_now(){
         setTimeout(function(){
             var play_time = document.getElementsByClassName('bilibili-player-video-time-now')[0];
+            if (play_time == undefined) {
+                alert('undefined')
+            }
             var video_time = document.getElementsByClassName('bilibili-player-video-time-total')[0];
             play_time_now = time2sec(play_time.innerText);
             surplus_time = time2sec(video_time.innerText) - play_time_now;
@@ -101,6 +105,7 @@
                 }
                 catch(err){
                     alert('cuowu')
+                    setTimeout(get_time_now,200)
                 }
             }
         },200);
