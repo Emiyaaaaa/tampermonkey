@@ -103,8 +103,7 @@
                     get_time_now();
                 }
                 catch(err){
-                    alert('cuowu')
-                    setTimeout(get_time_now,200)
+                    setTimeout(get_time_now,200);
                 }
             }
         },200);
