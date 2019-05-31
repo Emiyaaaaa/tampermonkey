@@ -44,7 +44,6 @@
                 else{
                     var video_play_button = document.getElementsByClassName('bilibili-player-video-state')[0];
                     $(video_play_button).click();
-
                     var p_video_ele = document.getElementById('multi_page');
                     if (p_video_ele != undefined) {
                         setTimeout(function(){
@@ -56,16 +55,16 @@
                                 }
                             }
                         },2500);
-                    }
-                    var play_time = document.getElementsByClassName('bilibili-player-video-time-now')[0];
-                    play_time_now = time2sec(play_time.innerText);
-                    try{
-                        get_time_now();
-                    }
-                    catch(err){
-                        alert(1)
-                        get_time_now();
-                    }
+                        var play_time = document.getElementsByClassName('bilibili-player-video-time-now')[0];
+                        play_time_now = time2sec(play_time.innerText);
+                        try{
+                            get_time_now();
+                        }
+                        catch(err){
+                            alert(1)
+                            get_time_now();
+                        }
+                    } 
                 }
             },50);
         }
@@ -110,6 +109,7 @@
             }
         },200);
     }
+
     function open_new_video(){
         var now_av_index = all_video.indexOf(now_av_id);
         if (now_av_index != 0){
