@@ -57,13 +57,7 @@
                         },2500);
                         var play_time = document.getElementsByClassName('bilibili-player-video-time-now')[0];
                         play_time_now = time2sec(play_time.innerText);
-                        try{
-                            get_time_now();
-                        }
-                        catch(err){
-                            alert(1)
-                            get_time_now();
-                        }
+                        get_time_now();
                     } 
                 }
             },50);
