@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="UTF-8">
+	<title>日历</title>
+	<style type="text/css">
+		table,th,td{
+		    border: 1px solid black;
+		}
+		table{
+			margin-top: 30px;
+		}
+		td{
+			width: 100px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<span style="font-size: 20px;">选择月份</span>
+	<select id="Month" onChange="getMouth();">
+		<option value="Jan">1月</option>
+		<option value="Feb">2月</option>
+		<option value="Mar">3月</option>
+	</select>
+	<table>
+		<tr>
+			<td>1日</td>
+			<td>2日</td>
+			<td>3日</td>
+			<td>4日</td>
+			<td>5日</td>
+			<td>6日</td>
+			<td>7日</td>
+		</tr>
+		<tr>
+			<td>8日</td>
+			<td>9日</td>
+			<td>10日</td>
+			<td>11日</td>
+			<td>12日</td>
+			<td>13日</td>
+			<td>14日</td>
+		</tr>
+		<tr>
+			<td>15日</td>
+			<td>16日</td>
+			<td>17日</td>
+			<td>18日</td>
+			<td>19日</td>
+			<td>20日</td>
+			<td>21日</td>
+		</tr>
+		<tr>
+			<td>22日</td>
+			<td>23日</td>
+			<td>24日</td>
+			<td>25日</td>
+			<td>26日</td>
+			<td>27日</td>
+			<td>28日</td>
+		</tr>
+		<tr>
+			<td class="else_day">29日</td>
+			<td class="else_day">30日</td>
+			<td class="else_day">31日</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		apply('Jan');
+		function getMouth(){
+			var Mon = document.getElementById('Month').value;
+			apply(Mon);
+		}
+		function apply(month){
+			var month_dict = {
+				'Jan':31,
+				'Feb':28,
+				'Mar':31,
+			}
+			var day_num = month_dict[month]-28;
+			var else_day = document.getElementsByClassName('else_day');
+			for (var i = 0; i < day_num; i++) {
+				else_day[i].style.display = 'table-cell';
+			}
+			for (var i = 2; i >= day_num; i--) {
+				else_day[i].style.display = 'none';
+			}
+		}
+	</script>
+</body>
+</html>
