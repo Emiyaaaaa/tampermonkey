@@ -32,37 +32,37 @@
     }
     else{
         not_1818 = true;
-        function waitLoading(){
-            setTimeout(function(){
-                var video_time = document.getElementsByClassName('bilibili-player-video-time-total')[0];
-                if (video_time == undefined) {
-                    waitLoading();
-                }
-                else if (video_time.innerText == '00:00') {
-                    waitLoading();
-                }
-                else{
-                    var video_play_button = document.getElementsByClassName('bilibili-player-video-state')[0];
-                    $(video_play_button).click();
-                    var p_video_ele = document.getElementById('multi_page');
-                    if (p_video_ele != undefined) {
-                        setTimeout(function(){
-                            p_video_list = p_video_ele.getElementsByClassName('list-box')[0].getElementsByTagName('li');
-                            for (var i = 0; i < p_video_list.length; i++) {
-                                if (p_video_list[i].classList.contains('on')) {
-                                    now_av_p = i + 1;
-                                    break;
-                                }
-                            }
-                        },2500);
-                        var play_time = document.getElementsByClassName('bilibili-player-video-time-now')[0];
-                        play_time_now = time2sec(play_time.innerText);
-                        get_time_now();
-                    } 
-                }
-            },50);
-        }
-        waitLoading();
+        // function waitLoading(){
+        //     setTimeout(function(){
+        //         var video_time = document.getElementsByClassName('bilibili-player-video-time-total')[0];
+        //         if (video_time == undefined) {
+        //             waitLoading();
+        //         }
+        //         else if (video_time.innerText == '00:00') {
+        //             waitLoading();
+        //         }
+        //         else{
+        //             var video_play_button = document.getElementsByClassName('bilibili-player-video-state')[0];
+        //             $(video_play_button).click();
+        //             var p_video_ele = document.getElementById('multi_page');
+        //             if (p_video_ele != undefined) {
+        //                 setTimeout(function(){
+        //                     p_video_list = p_video_ele.getElementsByClassName('list-box')[0].getElementsByTagName('li');
+        //                     for (var i = 0; i < p_video_list.length; i++) {
+        //                         if (p_video_list[i].classList.contains('on')) {
+        //                             now_av_p = i + 1;
+        //                             break;
+        //                         }
+        //                     }
+        //                 },2500);
+        //                 var play_time = document.getElementsByClassName('bilibili-player-video-time-now')[0];
+        //                 play_time_now = time2sec(play_time.innerText);
+        //                 get_time_now();
+        //             } 
+        //         }
+        //     },50);
+        // }
+        // waitLoading();
     }
 
     function time2sec(time){
