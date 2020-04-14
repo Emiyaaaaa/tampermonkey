@@ -1,6 +1,8 @@
 (function() {
-    now_av = window.location.href.split('/')[4];
-    now_av_id = now_av.slice(2,);
+    now_av_id = window.location.href.split('?allVideo=')[0].split('/')[4];
+    console.log(window.location.search)
+    all_video_string = window.location.search.split('allVideo=')[1];
+    all_video = all_video_string.split('-');
     if ($('#viewbox_report .video-title .tit').html().indexOf('1818黄金眼') > -1){
         not_1818 = false;
     	function waitLoading(){
@@ -97,21 +99,22 @@
                     get_time_now();
                 }
                 catch(err){
-                    setTimeout(get_time_now,200);
+                    setTimeout(get_time_now,100);
                 }
             }
-        },200);
+        },100);
     }
 
     function open_new_video(){
         var now_av_index = all_video.indexOf(now_av_id);
-        if (now_av_index != 0){
-            window.location.href = 'https://www.bilibili.com/video/av' + all_video[now_av_index-1];
+        console.log(now_av_id,now_av_index)
+        if (now_av_index != -1 && now_av_index != 29){
+            window.location.href = 'https://www.bilibili.com/video/' + all_video[now_av_index+1] + window.location.search;
         }
     }
     function open_new_p_video(){
         if (now_av_p < p_video_list.length) {
-            window.location.href = 'https://www.bilibili.com/video/av' + now_av_id + '/?p=' + (now_av_p + 1);
+            window.location.href = 'https://www.bilibili.com/video/' + now_av_id + '/?p=' + (now_av_p + 1);
         }
     }
 })();
