@@ -52,7 +52,7 @@ function replaceUrl(){
 	var videoItems = document.getElementsByClassName('small-item');
 	for (let i = 0; i < videoItems.length; i++) {
 		videoItemsLink = videoItems[i].getElementsByTagName('a');//只有两个a标签就不做循环了
-		videoItemsLink[0].href = videoItemsLink[1].href = videoItemsLink[0].href+"?allVideo="+urlListString;
+		videoItemsLink[0].href = videoItemsLink[1].href = videoItemsLink[0].href.split('?')[0]+"?allVideo="+urlListString;
 	}
 }	
 }
